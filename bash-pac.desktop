@@ -1,8 +1,5 @@
 [Desktop Entry]
-Name=Bash-Pac
-Comment=Play Bash-Pac Game
-Exec=xfce4-terminal --working-directory=/home/zdislav/Desktop/stuff/bash-pac.AppDir -e './bash-pac.sh'
-Icon=bash-pac
+Name=Bash Pac
+Exec=xfce4-terminal --working-directory=/home/zdislav/Desktop/stuff/bash-pac.AppDir -e ./bash-pac.sh
 Type=Application
 Categories=Game;
-Terminal=false
