@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define the command to run the script in a new terminal
+TERMINAL_CMD="bash -c 'cd /home/zdislav/Desktop/stuff/bash-pac.AppDir && ./bash-pac.sh; exec bash'"
+
+# Try to find a suitable terminal emulator
+if command -v gnome-terminal > /dev/null; then
+    gnome-terminal -- bash -c "$TERMINAL_CMD"
+elif command -v x-terminal-emulator > /dev/null; then
+    x-terminal-emulator -e "$TERMINAL_CMD"
+elif command -v konsole > /dev/null; then
+    konsole -e "$TERMINAL_CMD"
+elif command -v xfce4-terminal > /dev/null; then
+    xfce4-terminal -- bash -c "$TERMINAL_CMD"
+elif command -v lxterminal > /dev/null; then
+    lxterminal -e "$TERMINAL_CMD"
+elif command -v mate-terminal > /dev/null; then
+    mate-terminal -- bash -c "$TERMINAL_CMD"
+elif command -v xterm > /dev/null; then
+    xterm -e "$TERMINAL_CMD"
+elif command -v urxvt > /dev/null; then
+    urxvt -e "$TERMINAL_CMD"
+else
+    echo "No suitable terminal emulator found."
+    exit 1
+fi
